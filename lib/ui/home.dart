@@ -16,7 +16,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late final ThemeData theme;
   late final List<Widget> listMenu;
-  late final List<String> listTitle;
   late int index;
 
   @override
@@ -33,22 +32,16 @@ class _HomeState extends State<Home> {
       const Saved(),
       const Setting(),
     ];
-    listTitle = [
-      'Pocket News',
-      'Search',
-      'Saved',
-      'Setting',
-    ];
     index = 0;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(listTitle[index]),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: listMenu[index],
       ),
-      body: listMenu[index],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (value) {
@@ -59,7 +52,7 @@ class _HomeState extends State<Home> {
             icon: index == 0
                 ? const Icon(Icons.article)
                 : const Icon(Icons.article_outlined),
-            label: 'Today',
+            label: 'All',
           ),
           BottomNavigationBarItem(
             icon: index == 1

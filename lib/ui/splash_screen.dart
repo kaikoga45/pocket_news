@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pocket_news/ui/home.dart';
 import 'package:pocket_news/utils/screen_size.dart';
@@ -18,8 +20,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    if (Platform.isAndroid) {
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
+      );
+    }
     Timer(
-      const Duration(seconds: 3),
+      const Duration(seconds: 1),
       () => Navigator.pushReplacementNamed(context, Home.id),
     );
   }

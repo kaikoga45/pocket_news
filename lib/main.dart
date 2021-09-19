@@ -14,6 +14,7 @@ class PocketNews extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pocket News',
+      debugShowCheckedModeBanner: false,
       theme: lightThemeData,
       initialRoute: SplashScreen.id,
       routes: routes,

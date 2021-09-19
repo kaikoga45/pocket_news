@@ -51,6 +51,7 @@ final ThemeData lightThemeData = ThemeData(
     bodyColor: _lightInformationFontColor,
   ),
   appBarTheme: AppBarTheme(
+    centerTitle: true,
     elevation: 0,
     titleTextStyle:
         _textTheme.headline6!.apply(color: _lightImportantFontColor),

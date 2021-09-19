@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Today extends StatelessWidget {
-  const Today({Key? key}) : super(key: key);
+class All extends StatefulWidget {
+  const All({Key? key}) : super(key: key);
 
   @override
+  State<All> createState() => _AllState();
+}
+
+class _AllState extends State<All> {
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Center(child: Text('Today')),
-        ],
-      ),
-    );
+    return Scaffold();
   }
 }
